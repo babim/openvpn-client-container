@@ -4,7 +4,7 @@ ENV TERM=xterm-color
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories && \
     echo "http://dl-4.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
-    apk add --no-cache rsyslog supervisor openvpn dropbear dropbear-ssh
+    apk add --no-cache rsyslog supervisor openvpn
 
 VOLUME ["/etc/openvpn"]
 
