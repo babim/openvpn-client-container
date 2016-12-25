@@ -17,7 +17,7 @@ appSetup () {
 
 appStart () {
   appSetup
-  /runssh.sh
+  [ -f /runssh.sh ] && /runssh.sh
   /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
 }
 
