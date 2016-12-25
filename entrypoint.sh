@@ -3,18 +3,8 @@
 DEFAULT_CLIENT_CONFIG="/etc/openvpn/client.conf"
 
 CLIENT_CONFIG_FILE=${CLIENT_CONFIG_FILE:-${DEFAULT_CLIENT_CONFIG}}
-USER_NAME=${USER_NAME:-anonymous}
-USER_KEY=${USER_KEY:-false}
 
 appSetup () {
-  USER_HOME="/home/${USER_NAME}"
-  adduser -D -s /bin/bash -h ${USER_HOME} ${USER_NAME}
-  mkdir -p "${USER_HOME}/.ssh"
-  echo "${USER_KEY}" > "${USER_HOME}/.ssh/authorized_keys"
-  chown -R ${USER_NAME}:${USER_NAME} "${USER_HOME}"
-  chmod 0600 "${USER_HOME}/.ssh/authorized_keys"
-
-  mkdir -p /etc/dropbear
 
   mkdir -p /dev/net
   if [ ! -c /dev/net/tun ]; then
