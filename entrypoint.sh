@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -e
+#!/bin/sh -e
 
 DEFAULT_CLIENT_CONFIG="/etc/openvpn/client.conf"
 
