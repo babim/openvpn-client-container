@@ -1,7 +1,7 @@
 version: '2'
 services:
   ovpn:
-    image: tkaefer/openvpn-client-container
+    image: babim/openvpn-client
     cap_add:
       - NET_ADMIN # needed to be set for being able to setup tun device in container
     volumes:
