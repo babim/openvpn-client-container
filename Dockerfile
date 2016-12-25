@@ -1,4 +1,4 @@
-FROM babim/alpinebase
+FROM babim/alpinebase:ssh
 
 ENV TERM=xterm-color
 
@@ -15,5 +15,5 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
+EXPOSE 22
 CMD ["app:start"]
